@@ -1,7 +1,7 @@
  readme file for AirBnB clone project.
 
 
-
+https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240109%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240109T232426Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=10f8a8f535d63f84fed6db1598c626b6b61cd4c492ac9bea36bce91284935264
 Background Context
 Welcome to the AirBnB clone project!
 
