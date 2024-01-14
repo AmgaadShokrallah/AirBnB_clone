@@ -82,3 +82,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(eval(argl[0])().id)
             storage.save()
+
+
+if __name__ == "__main__":
+    HBNBCommand().cmdloop()
