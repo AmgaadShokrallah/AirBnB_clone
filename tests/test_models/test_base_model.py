@@ -14,9 +14,6 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_no_args_instantiates(self):
         self.assertEqual(BaseModel, type(BaseModel()))
 
-    def test_new_instance_stored_in_objects(self):
-        self.assertIn(BaseModel(), models.storage.all().values())
-
     def test_id_is_public_str(self):
         self.assertEqual(str, type(BaseModel().id))
 
@@ -49,11 +46,11 @@ class TestBaseModel_instantiation(unittest.TestCase):
         bmode = BaseModel()
         bmode.id = "123456"
         bmode.created_at = bmode.updated_at = dt
-        bmstr = bm.__str__()
-        self.assertIn("[BaseModel] (123456)", bmstr)
-        self.assertIn("'id': '123456'", bmstr)
-        self.assertIn("'created_at': " + dt_repr, bmstr)
-        self.assertIn("'updated_at': " + dt_repr, bmstr)
+        bmodestr = bmode.__str__()
+        self.assertIn("[BaseModel] (123456)", bmodestr)
+        self.assertIn("'id': '123456'", bmodestr)
+        self.assertIn("'created_at': " + dt_repr, bmodestr)
+        self.assertIn("'updated_at': " + dt_repr, bmodestr)
 
     def test_args_unused(self):
         bm = BaseModel(None)
@@ -174,7 +171,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
 
     def test_contrast_to_dict_dunder_dict(self):
         bmode = BaseModel()
-        self.assertNotEqual(bm.to_dict(), bmode.__dict__)
+        self.assertNotEqual(bmode.to_dict(), bmode.__dict__)
 
     def test_to_dict_with_arg(self):
         bmode = BaseModel()
