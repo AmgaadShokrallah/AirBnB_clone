@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for models/base_model.py.
-Unittest classes:
-    TestBaseModel_instantiation
-    TestBaseModel_save
-    TestBaseModel_to_dict
-"""
+"""Defines unittests for models/base_model.py."""
 import os
 import models
 import unittest
@@ -79,7 +74,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_with_args_and_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        bmode = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)
+        bm = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)
         self.assertEqual(bm.id, "345")
         self.assertEqual(bm.created_at, dt)
         self.assertEqual(bm.updated_at, dt)
@@ -138,7 +133,7 @@ class TestBaseModel_save(unittest.TestCase):
 
 
 class TestBaseModel_to_dict(unittest.TestCase):
-    """Unittests for testing to_dict method of the BaseModel class."""
+    """Unittests for testing to_dict method of BaseModel class."""
 
     def test_to_dict_type(self):
         bmode = BaseModel()
